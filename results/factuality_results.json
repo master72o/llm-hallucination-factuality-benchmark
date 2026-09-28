@@ -1,0 +1,409 @@
+[
+  {
+    "item_id": "fact_01",
+    "prompt": "What is the capital of Canada?",
+    "response": "Ottawa is the official capital of Canada.",
+    "evidence_text": "Ottawa is the official capital of Canada, located in the province of Ontario.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Ottawa is the official capital of Canada.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_02",
+    "prompt": "Who discovered penicillin?",
+    "response": "Alexander Fleming discovered penicillin in 1928 at St. Mary's Hospital.",
+    "evidence_text": "Alexander Fleming discovered penicillin at St. Mary's Hospital in London in September 1928.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Alexander Fleming discovered penicillin in 1928 at St.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      },
+      {
+        "id": "claim_2",
+        "text": "Mary's Hospital.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_03",
+    "prompt": "What is the speed of light?",
+    "response": "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+    "evidence_text": "The speed of light in a vacuum is 299,792,458 meters per second.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_04",
+    "prompt": "When was the French Revolution?",
+    "response": "The French Revolution began in the year 1848.",
+    "evidence_text": "The French Revolution was a period of radical political change in France that began in 1789.",
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "incorrect_number",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "The French Revolution began in the year 1848.",
+        "status": "contradicted",
+        "hallucination_type": "incorrect_number",
+        "explanation": "Numerical mismatch: Claim mentions {'1848'} not in evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_05",
+    "prompt": "What is 15 * 14?",
+    "response": "15 multiplied by 14 equals 225.",
+    "evidence_text": "15 multiplied by 14 is equal to 210.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "incorrect_number",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "15 multiplied by 14 equals 225.",
+        "status": "contradicted",
+        "hallucination_type": "incorrect_number",
+        "explanation": "Numerical mismatch: Claim mentions {'15', '14', '225'} not in evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_06",
+    "prompt": "Who painted the Mona Lisa?",
+    "response": "Vincent van Gogh painted the Mona Lisa in Florence.",
+    "evidence_text": "The Mona Lisa was painted by the Italian Renaissance artist Leonardo da Vinci.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "false_attribution",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Vincent van Gogh painted the Mona Lisa in Florence.",
+        "status": "contradicted",
+        "hallucination_type": "false_attribution",
+        "explanation": "Detected expected hallucination: 'false_attribution'"
+      }
+    ]
+  },
+  {
+    "item_id": "fact_07",
+    "prompt": "What is the capital of Australia?",
+    "response": "Sydney is the capital city of Australia.",
+    "evidence_text": "Canberra is the capital city of Australia, established following a compromise between Sydney and Melbourne.",
+    "precision": 1.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Sydney is the capital city of Australia.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_08",
+    "prompt": "What is the chemical formula for water?",
+    "response": "Water has the chemical formula H2O.",
+    "evidence_text": "Water is a chemical compound with the chemical formula H2O, consisting of two hydrogen atoms and one oxygen atom.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Water has the chemical formula H2O.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_09",
+    "prompt": "When was Python released?",
+    "response": "Guido van Rossum released Python in 1991.",
+    "evidence_text": "Python was created by Guido van Rossum and first released on February 20, 1991.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Guido van Rossum released Python in 1991.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_10",
+    "prompt": "What is the distance to the Moon?",
+    "response": "The average distance from Earth to the Moon is 50,000 kilometers.",
+    "evidence_text": "The average distance from Earth to the Moon is approximately 384,400 kilometers.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "incorrect_number",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "The average distance from Earth to the Moon is 50,000 kilometers.",
+        "status": "contradicted",
+        "hallucination_type": "incorrect_number",
+        "explanation": "Numerical mismatch: Claim mentions {'50', '000'} not in evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_11",
+    "prompt": "Who wrote Hamlet?",
+    "response": "William Shakespeare wrote Hamlet.",
+    "evidence_text": "The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet, is a tragedy written by William Shakespeare.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "William Shakespeare wrote Hamlet.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_12",
+    "prompt": "What is the freezing point of water?",
+    "response": "Water freezes at 0 degrees Celsius under standard atmospheric pressure.",
+    "evidence_text": "At 1 atmosphere of pressure, water freezes at 0 degrees Celsius.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Water freezes at 0 degrees Celsius under standard atmospheric pressure.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_13",
+    "prompt": "What is the capital of Japan?",
+    "response": "Tokyo is the capital of Japan.",
+    "evidence_text": "Tokyo is the capital and largest city of Japan.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Tokyo is the capital of Japan.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_14",
+    "prompt": "Who invented the telephone?",
+    "response": "Thomas Edison invented the telephone in 1876.",
+    "evidence_text": "Alexander Graham Bell was granted the first US patent for the telephone in 1876.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "false_attribution",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Thomas Edison invented the telephone in 1876.",
+        "status": "contradicted",
+        "hallucination_type": "false_attribution",
+        "explanation": "Detected expected hallucination: 'false_attribution'"
+      }
+    ]
+  },
+  {
+    "item_id": "fact_15",
+    "prompt": "What is the atomic number of Carbon?",
+    "response": "Carbon has an atomic number of 6.",
+    "evidence_text": "Carbon is a chemical element with symbol C and atomic number 6.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Carbon has an atomic number of 6.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_16",
+    "prompt": "What is the boiling point of water in Fahrenheit?",
+    "response": "Water boils at 100 degrees Fahrenheit.",
+    "evidence_text": "Water boils at 212 degrees Fahrenheit at sea level.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "incorrect_number",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Water boils at 100 degrees Fahrenheit.",
+        "status": "contradicted",
+        "hallucination_type": "incorrect_number",
+        "explanation": "Numerical mismatch: Claim mentions {'100'} not in evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_17",
+    "prompt": "Who discovered gravity?",
+    "response": "Isaac Newton formulated the law of universal gravitation in 1687.",
+    "evidence_text": "Sir Isaac Newton published his law of universal gravitation in his work Philosophi\u00e6 Naturalis Principia Mathematica in 1687.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Isaac Newton formulated the law of universal gravitation in 1687.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_18",
+    "prompt": "What is the largest ocean on Earth?",
+    "response": "The Atlantic Ocean is the largest ocean on Earth.",
+    "evidence_text": "The Pacific Ocean is the largest and deepest of Earth's five oceanic divisions.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "contradiction",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "The Atlantic Ocean is the largest ocean on Earth.",
+        "status": "contradicted",
+        "hallucination_type": "contradiction",
+        "explanation": "Detected expected hallucination: 'contradiction'"
+      }
+    ]
+  },
+  {
+    "item_id": "fact_19",
+    "prompt": "What is 100 / 4?",
+    "response": "100 divided by 4 equals 25.",
+    "evidence_text": "100 divided by 4 equals 25.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "passed": true,
+    "primary_hallucination_type": "correct_claim",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "100 divided by 4 equals 25.",
+        "status": "supported",
+        "hallucination_type": "correct_claim",
+        "explanation": "Claim supported by evidence."
+      }
+    ]
+  },
+  {
+    "item_id": "fact_20",
+    "prompt": "What language is spoken in Brazil?",
+    "response": "Spanish is the primary official language of Brazil.",
+    "evidence_text": "Portuguese is the official and national language of Brazil.",
+    "precision": 0.0,
+    "recall": 1.0,
+    "f1_score": 0.0,
+    "passed": false,
+    "primary_hallucination_type": "contradiction",
+    "claims": [
+      {
+        "id": "claim_1",
+        "text": "Spanish is the primary official language of Brazil.",
+        "status": "contradicted",
+        "hallucination_type": "contradiction",
+        "explanation": "Detected expected hallucination: 'contradiction'"
+      }
+    ]
+  }
+]

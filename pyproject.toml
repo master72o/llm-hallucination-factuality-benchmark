@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-hallucination-factuality-benchmark"
+version = "1.0.0"
+description = "A comprehensive factuality benchmark evaluating precision, recall, F1, and claim-level evidence verification against a detailed hallucination taxonomy."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "LLM Factuality Specialist & AI Evaluator", email = "factuality@example.com" }
+]
+dependencies = [
+    "numpy>=1.22.0",
+    "pandas>=1.5.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.12.0",
+    "scipy>=1.9.0",
+    "scikit-learn>=1.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+factuality-benchmark = "factuality_benchmark.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["factuality_benchmark*"]
