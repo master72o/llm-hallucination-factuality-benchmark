@@ -112,3 +112,35 @@ class FactualityChecker:
             return (ClaimStatus.UNSUPPORTED, HallucinationType.PARTIALLY_SUPPORTED, "Claim partially supported.")
         else:
             return (ClaimStatus.CONTRADICTED, HallucinationType.FABRICATED_ENTITY, "Claim contains fabricated entities.")
+
+    def compute_claim_density_and_risk_profile(self, result: FactualityResult) -> dict:
+        """
+        Computes atomic claim density per 100 words, unsupported/contradicted ratios,
+        and a categorical hallucination risk tier for production release gating.
+        """
+        word_count = max(len(re.findall(r"\w+", result.response)), 1)
+        total_claims = len(result.claims)
+        claims_per_100_words = (total_claims / word_count) * 100.0
+
+        contradicted = sum(1 for c in result.claims if c.status == ClaimStatus.CONTRADICTED)
+        unsupported = sum(1 for c in result.claims if c.status == ClaimStatus.UNSUPPORTED)
+
+        contradicted_rate = contradicted / total_claims if total_claims > 0 else 0.0
+        unsupported_rate = unsupported / total_claims if total_claims > 0 else 0.0
+
+        if contradicted > 0 or result.precision < 0.60:
+            risk_tier = "CRITICAL_RISK"
+        elif unsupported > 0 or result.precision < 0.85:
+            risk_tier = "MODERATE_RISK"
+        else:
+            risk_tier = "LOW_RISK"
+
+        return {
+            "item_id": result.item_id,
+            "response_word_count": word_count,
+            "total_claims": total_claims,
+            "claims_per_100_words": round(claims_per_100_words, 2),
+            "contradicted_claim_rate": round(contradicted_rate, 4),
+            "unsupported_claim_rate": round(unsupported_rate, 4),
+            "risk_tier": risk_tier,
+        }
